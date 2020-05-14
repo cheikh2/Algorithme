@@ -104,6 +104,7 @@ Debut
 	Ecrire(‘le résultat de ’,x,’ à la puissance’,n ,‘ : ’, puis)
 Fin
 
+
             Exercice 5:
 
 Algorithme Somme
@@ -144,4 +145,196 @@ Début
        Lire(x2,y2) 
        d = sqrt((x2-x1)^2 + (y2-y1)^2) 
        Écrire ("La distance est : ", d) 
+Fin
+
+
+			Exercice 7 
+
+		Algorithme de decomosition 
+
+Variables
+montant, b20, b10, b5, p2, p1  :entiers
+Début
+  Répéter
+    Afficher("Entrer le montant à décomposer")
+    lire(montant)
+    jusqu'au(montant > 0)
+    b20 <- montant / 20
+    b10 <- (montant % 20)/10
+    b5 <-  ((montant%20)%10)/5
+    p2 <-  (((montant%20)%10)%5)/2
+    p1 <-  ((((montant%20)%10)%5)%2)
+    Afficher("le montant a ",b20," billets de 20",b10,"billets de 10 ",b5,"billets de 5",p2,"pièces de 2 ",p1,"pièce de 1")
+Fin
+
+
+				Excercice 8:
+
+		Algorithme equation second degre
+      Variables
+      a,b,c,delta,x1,x2 :reels
+Debut
+	Ecrire (" entrer les valeurs a, b et c de l’équation ax²+bx+c=0 : ")
+    Lire(a, b, c)
+    Si (a=0)
+    Alors
+    Ecrire (" équation du premier degré ")
+    SI (b≠0)
+    Alors Ecrire ("solution est ", -c/b)
+    Sinon Ecrire (" Pas de solution")
+    Finsi
+    Sinon 
+    delta=b^2-4*a*c
+    Si delta < 0 alors
+    Ecrire ("pas de solution")
+    Sinon
+    Si delta=0
+    Ecrire ("x1<- x2=";-b/(2*a)
+    Sinon
+    Ecrire ("x1<-   -b-racine(delta/(2*a))
+    Ecrire ("x2<-   -b+racine(delta/(2*a))
+   Fin si
+  Fin si
+Fin
+
+
+
+				Exercice 9:
+
+     Algorithme calcul_durée;
+      Question A
+Var
+hd,md,ha,ma,dha, dma: entiers
+Début
+     Ecrire (« entrer horaire de départ et d’arrivée »)
+     Lire (hd, md, ha, ma)
+     dma <= (ha*60+ma) – (hd*60+md)
+     dha <= dma/60
+     Ecrire (« durée de vol : » , dha, dma)
+Fin
+
+			Question B
+
+variables hd,ha,md,ma,dha,dma :entier
+
+Début
+  Répéter
+    Afficher("Entrer l'heure et minutes de départs ")
+    lire(hd,md)
+  jusqu'à((hd>0 et hd <  24) ET (md>0 et md < 60))
+  Répéter
+    Afficher("Entrer l'heure et minutes de d'arrivée ")
+    lire(ha,ma)
+  jusqu'à((ha>0 et ha < 24) ET (ma>0 et ma < 60))
+  si(ha <= hd) alors
+    dha <- 24 - hd + ha
+    dma <- md + ma
+    si(dma >= 60) alors
+      dha <- dha + 1
+      dma <- dma - 60
+    fsi
+    Afficher("la durée du vol est : ",dha,"heures et ",dma,"minutes ")
+    sinon
+      dha <- ha - hd
+      dma <- ma + md
+      si(dma >= 60) alors
+        dha <- dha + 1
+        dma <- dma - 60
+      fsi
+      Afficher("la durée du vol est : ",dha,"heures et ",dma,"minutes ")
+  fsi
+Fin
+
+
+
+				Exercice 10:
+
+Variables tableau tab[3]:entier
+          i,j,tmp,min   :entier
+Début
+  Pour i <- 1 à 3 faire
+    Afficher("Saisir une valeur")
+    lire(tab[i])
+    Finpour
+    Pour i <- 1 à 2 faire
+    min <- i
+    Pour j <- i+1 à 3 faire
+    si(tab[j] < tab[min])
+    min <- j
+    fsi
+    Fpour
+    si(min <> i) alors
+    tmp <- tab[min]
+    tab[min] <- tab[i]
+    tab[i] <- tmp
+    fsi
+  Fpour
+    Pour i <- 1 à 3 faire
+    Afficher("les valeurs aprés tri sont  ", tab[i])
+  Fpour
+Fin
+
+
+			Exercice 11
+
+Variables a,b :entiers
+          op  :chaine de caractère
+
+Début
+Afficher("Entrer une première valeur")
+  	lire(a)
+  	Afficher("Entrer l'opérateur")
+  	lire(op)
+  	Afficher("Entrer une deuxième valeur")
+ 	 lire(b)
+  	Selon op faire
+   		 '+' : Afficher("la somme des 2 valeurs est ", a+b)
+   		 '*' : Afficher("le produit des 2 valeurs est ", a*b)
+   		 '-' : Afficher("le résultat de ",a,"-","b","est : ", a-b)
+   		 '/' : si(b <> 0) alors
+            		Afficher("la division de ",a,"/",b,"=", a/b)
+            	    	sinon
+              			Afficher("erreur")
+          		FinSi
+    			sinon Afficher("l'opérateur saisi est incorrecte")
+ 	 FinSelon
+Fin
+
+
+				Exercice 12:
+
+   Variables val, som, i :entier
+som <- 0	
+
+Début
+    Ecrirer("Saisir une valeur")
+  	lire(val)								
+  	Pour i <- 1 à val faire           		
+    	Si(val mod i = 0) Alors			
+      		som <- som + i
+    	FinSi
+	Si(som = val) Alors
+       			i <- val
+		FinSi
+    	FinPour
+		Ecrire("le nombre : ",val," est parfait")
+Fin
+
+				Exercice 12:
+
+Variables j,m,a : entier
+
+Début
+  Répéter
+    Afficher("saisir la date sous format j/m/a")
+    lire(j,m,a)
+    jusqu'à((j>0 et j<31) et (m>0 et m<12) et (a>1900 et a<2999))
+    si(m = 2 et j > 29) alors
+      Afficher("la date saisie est invalide")
+    fsi
+    si((m = 4 ou m = 6 ou m = 9 ou m = 11) et j>30) alors
+      Afficher("la date est invalide")
+    sinon
+      Afficher("la date : ",j,"/",m,"/",a," est valide")
+  fsi
 Fin
