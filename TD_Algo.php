@@ -320,7 +320,7 @@ Début
 		Ecrire("le nombre : ",val," est parfait")
 Fin
 
-				Exercice 12:
+				Exercice 13:
 
 Variables j,m,a : entier
 
@@ -328,13 +328,93 @@ Début
   Répéter
     Afficher("saisir la date sous format j/m/a")
     lire(j,m,a)
-    jusqu'à((j>0 et j<31) et (m>0 et m<12) et (a>1900 et a<2999))
-    si(m = 2 et j > 29) alors
+    jusqu'à((j > 0 et j < 31) et (m > 0 et m < 12) et (a>1900 et a < 2999))
+    Si (m = 2 et j > 29) alors
       Afficher("la date saisie est invalide")
     fsi
-    si((m = 4 ou m = 6 ou m = 9 ou m = 11) et j>30) alors
+    si((m = 4 ou m = 6 ou m = 9 ou m = 11) et j>30) Alors
       Afficher("la date est invalide")
     sinon
       Afficher("la date : ",j,"/",m,"/",a," est valide")
   fsi
 Fin
+
+
+          Exercice 14:
+
+	Algorithme année_bessextile; 
+variable
+année, jour, mois: entiers
+Debut
+     Ecrire (« entrer jour, mois et année »)
+      Lire(jour, mois, année)
+     Si ((annee mod 4 =0 et annee % 100 <> 0) ou annee % 400 =0 ) 
+     Alors 
+     Ecrire(‘l’année que vous avez entrer est bissextile.’)
+     Sinon 
+     Ecrire(‘l’année que vous avez entrer n’ est pas bissextile .’)
+  Finsi 
+Fin
+
+	          Exercice 15 : 
+      Algorithme calcul de somme et moyenne
+
+Variables
+  n, i : Entier
+  Somme=0
+
+Debut
+  Ecrire "Entrez un nombre : "
+  Lire (n)
+    Pour i ← 1 à n
+      Somme ← Somme+i
+    Fin Pour
+  Écrire ("La somme est : ", Somme) 
+  Écrire ("La moyenne est : ", Somme/n) 
+Fin
+
+          Exercice 16:
+
+     Algorithme Division soustractions successives
+
+Variables
+  A,B,R: entiers
+    Q : réel
+    R←A
+    Q←0
+  Début
+    Écrire ("Enter la valeur de A : ")
+            Lire (A)
+            Écrire ("Enter la valeur de B : ")
+            Lire (B)
+    Tant que R ≥ B Faire
+            R ←R - B
+            Q← Q+1
+    Fin Tant que
+Ecrire(“Quotient entier:”, Q)
+Ecrire(“Rester:”, R)
+Fin
+
+        Exercice 21 :
+
+   Algorithme Devinette
+
+Variables 
+  A, B : entiers
+
+     Début
+
+      Écrire ("Enter la valeur du premier utilisateur A : ")
+            Lire (A)
+	    Écrire ("Enter la valeur du deuxième utilisateur B : ")
+            Lire (B)
+	    Si B = A Alors
+	    Ecrire("Bravo vous avez deviné le nombre!")
+	    Sinon 
+          Si B > A Alors
+	            Ecrire("Entrer un nombre plus petit")
+	        Sinon Si B < A
+	            Ecrire("Entrer un nombre plus grand")
+      Fin Si
+	Fin Si
+FIN
