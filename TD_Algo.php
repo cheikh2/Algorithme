@@ -395,6 +395,28 @@ Ecrire(“Quotient entier:”, Q)
 Ecrire(“Rester:”, R)
 Fin
 
+
+          Exercice 17:
+          
+     Algorithme PGCD
+Variables
+a,b: entiers
+Début
+Écrire ("Enter la valeur de a: ")
+            Lire (a)
+            Écrire ("Enter la valeur de b : ")
+            Lire (b)
+Tant que (a<>b) faire
+          si a>b alors a <-- a-b
+                 sinon b <-- b-a
+                Fin si
+           Fin tant que
+             si a=b alors 
+	  Ecrire "PGCD = ", b	
+           fin si
+Fin
+
+
         Exercice 21 :
 
    Algorithme Devinette
