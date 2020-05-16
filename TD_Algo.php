@@ -397,7 +397,7 @@ Fin
 
 
           Exercice 17:
-          
+
      Algorithme PGCD
 Variables
 a,b: entiers
@@ -407,13 +407,32 @@ Début
             Écrire ("Enter la valeur de b : ")
             Lire (b)
 Tant que (a<>b) faire
-          si a>b alors a <-- a-b
-                 sinon b <-- b-a
+          si a>b alors a <- a-b
+                 sinon b <- b-a
                 Fin si
            Fin tant que
              si a=b alors 
 	  Ecrire "PGCD = ", b	
            fin si
+Fin
+
+        Exercice 18:
+
+     Algorithme PPCM
+variables
+ a , b ,c ,d : entiers
+
+Debut
+     Ecrire("entrez a, b")
+     lire a,b
+      c=a
+     d=b
+Tant que a <> b
+     si a > b alors b <- b+d
+     sinon a <- a+c
+Fin tant que
+   Ecrire (" le PPCM est" a)
+
 Fin
 
 
