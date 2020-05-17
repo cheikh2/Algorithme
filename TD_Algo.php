@@ -465,7 +465,35 @@ p, S : entier
  FIN
 
 
-        Exercice 21 :
+          Exercice 20:
+
+          ALGORITHME Somme_10Nombres
+
+  Const N=10;
+  Variables
+  indice , val : entier
+  iPG, PG :entier
+
+  DEBUT
+
+    Ecrire("Entrez le 1er nombre : ")
+    Lire (Val)
+      PG <- val
+      iPG <- 1
+        POUR indice de 2 à N
+          Ecrire("Entrez le nombre numéro", indice)
+          Lire (Val)
+            Si val > PG alors
+              iPG <- indice
+              PG <- val
+            Finsi
+        FIN POUR
+    ECRIRE("le plus grand de ces nombres est:", PG)
+    ECRIRE(" c'était le ",iPG, " ème nombre saisi)
+FIN
+
+
+          Exercice 21 :
 
    Algorithme Devinette
 
@@ -488,31 +516,6 @@ Variables
       Fin Si
 	Fin Si
 FIN
-
-
-          Exercice 20:
-
-          ALGORITHME Somme_10Nombres
-
-  Const N=10;
-  Variables
-  indice , val : entier
-  iPG, PG :entier
-
-  DEBUT
-
-    Ecrire("Entrez le 1er nombre : ")
-    Lire (Val)
-      PG <- val
-      iPG <- 1
-        POUR indice de 2 à N
-          Ecrire("Entrez le nombre numéro", indice)
-          Lire (Val)
-      Si val > PG alors
-        iPG <- indice
-        PG <- val
-      Finsi
-  FINPOUR
 
 
             Exercice 24 :
