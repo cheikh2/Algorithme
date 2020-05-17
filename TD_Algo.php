@@ -18,7 +18,7 @@ Début
 	qr  ← a/b
 Ecrire(“Quotient entier:”, q)
 Ecrire(“Quotient réel:”, qr)
-Ecrire(“Rester:”, r)
+Ecrire(“Reste:”, r)
 Fin
 
 
@@ -248,30 +248,31 @@ Fin
 
 
 				Exercice 10:
+      TriSuccessif
+Variables 
+  A, B, C : ENTIER
 
-Variables tableau tab[3]:entier
-          i,j,tmp,min   :entier
-Début
-  Pour i <- 1 à 3 faire
-    Afficher("Saisir une valeur")
-    lire(tab[i])
-    Finpour
-    Pour i <- 1 à 2 faire
-    min <- i
-    Pour j <- i+1 à 3 faire
-    si(tab[j] < tab[min])
-    min <- j
-    fsi
-    Fpour
-    si(min <> i) alors
-    tmp <- tab[min]
-    tab[min] <- tab[i]
-    tab[i] <- tmp
-    fsi
-  Fpour
-    Pour i <- 1 à 3 faire
-    Afficher("les valeurs aprés tri sont  ", tab[i])
-  Fpour
+  DEBUT
+
+Ecrire (" entrer Les valeurs A , B et C ")
+Lire(A,B,C)
+  Si (A > B) ALORS
+    echange (A,B)
+    Si B > C ALORS
+    echange (B,C)
+      Si A > B ALORS
+      echange (A,B)
+    FinSi 
+  FinSi
+
+  Sinon Si B > C ALORS
+    echange (B,C)
+    Si A >B ALORS
+      echange (A,B)
+    FinSi
+  FinSi
+FinSi
+Erire ("Les valeurs A , B et C sont (dans l’ordre):", A , B ,C)
 Fin
 
 
@@ -328,8 +329,8 @@ Début
   Répéter
     Afficher("saisir la date sous format j/m/a")
     lire(j,m,a)
-    jusqu'à((j > 0 et j < 31) et (m > 0 et m < 12) et (a>1900 et a < 2999))
-    Si (m = 2 et j > 29) alors
+    jusqu'à((j > 0 et j <= 31) et (m > 0 et m <= 12) et (a>1900 et a < 2999))
+    Si (m = 2 et j >= 29) alors
       Afficher("la date saisie est invalide")
     fsi
     si((m = 4 ou m = 6 ou m = 9 ou m = 11) et j>30) Alors
@@ -396,26 +397,36 @@ Ecrire(“Rester:”, R)
 Fin
 
 
-          Exercice 17:
-
-     Algorithme PGCD
-Variables
-a,b: entiers
-Début
-Écrire ("Enter la valeur de a: ")
+Exercice 17 :
+            
+            Algorithme PGCD
+        
+        Variables
+          a, b, c, resu, pgcd : entiers
+        Début
+          Répéter
+            Ecrire (" entrer la valeur de a ") 
             Lire (a)
-            Écrire ("Enter la valeur de b : ")
-            Lire (b)
-Tant que (a<>b) faire
-          si a>b alors a <- a-b
-                 sinon b <- b-a
-                Fin si
-           Fin tant que
-             si a=b alors 
-	  Ecrire "PGCD = ", b	
-           fin si
-Fin
-
+            Ecrire (" entrer la valeur de b") 
+            Lire (b) 
+          Jusqu’à a>0 ET b>0
+          Pgcd  ← 0
+          resu ← 0
+          TantQue (a<>b)
+            SI(b>a) Alors
+                c←a
+                a←b
+                b←c
+        FinSi
+            resu ← a-b
+            a ←b
+            b ← resu
+            pgcd ← a
+          FinTantQue
+          Ecrire("le pgcd de", a ," et ", b ," est : ", pgcd)
+        Fin
+        
+             
         Exercice 18:
 
      Algorithme PPCM
@@ -435,6 +446,24 @@ Fin tant que
 
 Fin
 
+        Exercice 19:
+
+    Algorithme Somme_Prix 
+
+variables
+p, S : entier
+ Debut 
+	S<-0 
+	  Ecrire("Entrer le prix du 1° article:") 
+	  Lire (p) 
+  Tant que (p<>0) Faire
+    S<-S+p 
+           Ecrire("Entrer le prix de l'article suivant( 0 si Fin):") 
+           Lire(p) 
+  Fin Tant que 
+           Ecrire (" La somme des prix des articles est ", S)
+ FIN
+
 
         Exercice 21 :
 
@@ -451,6 +480,56 @@ Variables
             Lire (B)
 	    Si B = A Alors
 	    Ecrire("Bravo vous avez deviné le nombre!")
+	    Sinon 
+          Si B > A Alors
+	            Ecrire("Entrer un nombre plus petit")
+	        Sinon Si B < A
+	            Ecrire("Entrer un nombre plus grand")
+      Fin Si
+	Fin Si
+FIN
+
+
+          Exercice 20:
+
+          ALGORITHME Somme_10Nombres
+
+  Const N=10;
+  Variables
+  indice , val : entier
+  iPG, PG :entier
+
+  DEBUT
+
+    Ecrire("Entrez le 1er nombre : ")
+    Lire (Val)
+      PG <- val
+      iPG <- 1
+        POUR indice de 2 à N
+          Ecrire("Entrez le nombre numéro", indice)
+          Lire (Val)
+      Si val > PG alors
+        iPG <- indice
+        PG <- val
+      Finsi
+  FINPOUR
+
+
+            Exercice 24 :
+
+   Algorithme Devinette
+
+Variables 
+  A, B : entiers
+
+     Début
+
+      Écrire ("Enter la valeur du premier utilisateur A : ")
+            Lire (A)
+	    Écrire ("Enter la valeur du deuxième utilisateur B : ")
+            Lire (B)
+	    Si B = A Alors
+	    Ecrire("Bravo vous avez trouvez le bon nombre!")
 	    Sinon 
           Si B > A Alors
 	            Ecrire("Entrer un nombre plus petit")
