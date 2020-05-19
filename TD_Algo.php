@@ -134,20 +134,7 @@ Début
        Écrire ("La distance est : ", d) 
 Fin
 
-                Exercice 6:
-        Algorithme calcul distance
-Var
-X1,x2,y1,y2 ,d: réels 
-Début
-       Ecrire(‘entrer la valeur de x1,y1 : ‘) 
-       Lire(x1,y1) ;
-       Ecrire(‘ entrer la valeur de x2,y2 : ‘) 
-       Lire(x2,y2) 
-       d = sqrt((x2-x1)^2 + (y2-y1)^2) 
-       Écrire ("La distance est : ", d) 
-Fin
-
-
+          
 			Exercice 7 
 
 		Algorithme de decomosition 
@@ -304,22 +291,22 @@ Fin
 
 				Exercice 12:
 
-   Variables val, som, i :entier
-som <- 0	
-
+        Variables val, som, i :entier
 Début
-    Ecrirer("Saisir une valeur")
-  	lire(val)								
-  	Pour i <- 1 à val faire           		
+Afficher("Saisir une valeur")
+  	lire(val)				
+  	som <- 0					
+  	Pour i <- 1 à val/2 faire           		
     	Si(val mod i = 0) Alors			
       		som <- som + i
     	FinSi
-	Si(som = val) Alors
-       			i <- val
-		FinSi
     	FinPour
-		Ecrire("le nombre : ",val," est parfait")
-Fin
+	Si(som = val) Alors
+       		Afficher("le nombre : ",val,"est parfait")
+	Sinon 
+		Afficher("le nombre : ",val," n’est parfait")
+	FinSi
+
 
 				Exercice 13:
 
