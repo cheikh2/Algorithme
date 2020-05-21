@@ -213,23 +213,27 @@ Début
     Afficher("Entrer l'heure et minutes de d'arrivée ")
     lire(ha,ma)
   jusqu'à((ha>0 et ha < 24) ET (ma>0 et ma < 60))
-  si(ha <= hd) alors
-    dha <- 24 - hd + ha
-    dma <- md + ma
-    si(dma >= 60) alors
-      dha <- dha + 1
-      dma <- dma - 60
-    fsi
-    Afficher("la durée du vol est : ",dha,"heures et ",dma,"minutes ")
-    sinon
-      dha <- ha - hd
-      dma <- ma + md
-      si(dma >= 60) alors
-        dha <- dha + 1
-        dma <- dma - 60
-      fsi
+    SI (ha > hb ) alors
+      si(ma > md) 
+        alors
+          dha <- ha-hd
+          dma <- ma - md
+      sinon
+          dha <- ha-hd-1
+          dma <- ma+60-md
+        Afficher("la durée du vol est : ",dha,"heures et ",dma,"minutes ")
+      Fin si
+    SINON
+      si (ma > md)
+        alors
+          dha <- 2ha-hd+24
+          dma <- ma - md
+      sinon
+          dha <- ha-hd+24-1
+          dma <- ma + 60 - md
       Afficher("la durée du vol est : ",dha,"heures et ",dma,"minutes ")
-  fsi
+    Fin si
+  FIN SI
 Fin
 
 
@@ -397,7 +401,7 @@ Exercice 17 :
             Ecrire (" entrer la valeur de b") 
             Lire (b) 
           Jusqu’à a>0 ET b>0
-          Pgcd  ← 0
+          pgcd  ← 0
           resu ← 0
           TantQue (a<>b)
             SI(b>a) Alors
@@ -480,29 +484,33 @@ p, S : entier
 FIN
 
 
-          Exercice 21 :
-
-   Algorithme Devinette
-
+Exercice 21 :
+Algorithme
 Variables 
-  A, B : entiers
+     	a, b : entiers
+Début
+     	
+     	Ecrire (‘entrez l’entier du premier utilisateur’)
+     	Lire(a)
+	Ecrire (‘entrez l’entier du deuxième utilisateur’)
+     	Lire (b)
+     	Répéter
+               	Si (a<>b)
+               	      	Si (a>b) Alors
+Ecrire (‘la valeur entrée est plus petite que la valeur entrée par le premier utilisateur’)
+               	      	Sinon
+Ecrire (‘la valeur entrée est plus grande que la valeur entrée par le premier utilisateur’)
+                        	FinSi
+			Ecrire(‘Entrez la valeur de b’)
+Lire(b)
+               	Sinon
+Ecrire (‘Bravo ! vous avez deviné la valeur entrée par le premier utilisateur’)
 
-     Début
+               	FinSi
+Jusqu’à  a = b
+                        	
+Fin
 
-      Écrire ("Enter la valeur du premier utilisateur A : ")
-            Lire (A)
-	    Écrire ("Enter la valeur du deuxième utilisateur B : ")
-            Lire (B)
-	    Si B = A Alors
-	    Ecrire("Bravo vous avez deviné le nombre!")
-	    Sinon 
-          Si B > A Alors
-	            Ecrire("Entrer un nombre plus petit")
-	        Sinon Si B < A
-	            Ecrire("Entrer un nombre plus grand")
-      Fin Si
-	Fin Si
-FIN
 
 
             Exercice 24 :
